@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #font{
+            font-family: "New Tegomin", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+    <script>
+        const parent = document.getElementsByClassName('parent');
+
+        window.onload = () => {
+            setTimeout(() => {
+                alert('読み込み終了');
+                document.body.innerHTML = '<section class="parent h-screen overflow-hidden w-full">\n<div class="mx-auto w-screen px-4 sm:px-6 lg:px-8">\n<div class="grid grid-cols-3 lg:h-screen">\n<div class="relative justify-center col-span-2 flex items-center bg-gray-100">\n<span class="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100"></span>\n<div class="px-10">\n<h2 id="font" class="text-red-800 text-5xl font-bold">\nお分かりいただけただろうか・・・・\n</h2>\n<p class="mt-4 text-gray-600 text-xl">\n読み込んでいる最中、画面が白くなりましたね。\n</p>\n<p class="mt-4 text-gray-600 text-3xl">\nぜんぜんスムーズじゃない！！ナウくない！！！\n</p>\n</div>\n</div>\n<div class="col-span-1 relative z-10 lg:py-16 grid items-center">\n<div class="relative h-64 sm:h-80 lg:h-96">\n<img alt=""\nsrc="' + '{% static "main/robo.jpg" %}' + '"\nclass="grayscale absolute inset-0 h-full w-full object-cover" />\n</div>\n</div>\n</div>\n</div>\n</section>';
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
